@@ -9,15 +9,13 @@
 </head>
 
 <body>
-    <h1>Favorite YouTube Music</h1>
+    <h1>My Favorite Songs</h1>
     <table id="music-table">
         <thead>
             <tr>
                 <th>Song Name</th>
                 <th>Artist</th>
-                <th>Duration</th>
-                <th>Date</th>
-                <th>YouTube Link</th>
+                <th>Video</th>
             </tr>
         </thead>
         <tbody id="table-body">
@@ -26,25 +24,19 @@
     <script>
         const musicData = [
             {
-                songName: "First Class",
-                artist: "NORTHNIGHT",
-                duration: "2:30",
-                date: "2025",
-                embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/DM7EVwMQ4qo?si=8YXb1QAd-EoLrjzv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                songName: "Say To You",
+                artist: "rghvarchive, redwater",
+                embed: '<iframe src="https://www.youtube.com/embed/wPIYBMJxrn8" title="rghvarchive, redwater - Say To You | Hip-Hop | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             },
             {
-                songName: "Dreams",
-                artist: "Lost Sky",
-                duration: "3:35",
-                date: "2018",
-                embed: '<iframe width="950" height="534" src="https://www.youtube.com/embed/SHFTHDncw0g" title="Lost Sky - Dreams | Trap | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                songName: "Adrenaline",
+                artist: "Slowboy, Zeli",
+                embed: '<iframe src="https://www.youtube.com/embed/WWxHNcl8oDk?si=OCc9BHexKU8AvHqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             },
             {
-                songName: "Mortals",
-                artist: "Warriyo (feat. Laura Brehm)",
-                duration: "3:49",
-                date: "2017",
-                embed: '<iframe width="950" height="534" src="https://www.youtube.com/embed/yJg-Y5byMMw" title="Warriyo - Mortals (feat. Laura Brehm) | Future Trap | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                songName: "La Playa",
+                artist: "sk3tch01, X972",
+                embed: '<iframe src="https://www.youtube.com/embed/ac1yOGIPxRs" title="sk3tch01, X972 - La Playa | Funk | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             }
         ];
 
@@ -60,14 +52,6 @@
             const artistCell = document.createElement("td");
             artistCell.textContent = song.artist;
             row.appendChild(artistCell);
-
-            const durationCell = document.createElement("td");
-            durationCell.textContent = song.duration;
-            row.appendChild(durationCell);
-
-            const dateCell = document.createElement("td");
-            dateCell.textContent = song.date;
-            row.appendChild(dateCell);
 
             const linkCell = document.createElement("td");
             linkCell.innerHTML = song.embed;
