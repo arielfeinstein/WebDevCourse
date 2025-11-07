@@ -26,17 +26,21 @@
             {
                 songName: "Say To You",
                 artist: "rghvarchive, redwater",
-                embed: '<iframe src="https://www.youtube.com/embed/wPIYBMJxrn8" title="rghvarchive, redwater - Say To You | Hip-Hop | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                embed: '<iframe src="https://www.youtube.com/embed/wPIYBMJxrn8" title="rghvarchive, redwater - Say To You | Hip-Hop | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+                link: 'https://www.youtube.com/watch?v=wPIYBMJxrn8'
+
             },
             {
                 songName: "Adrenaline",
                 artist: "Slowboy, Zeli",
-                embed: '<iframe src="https://www.youtube.com/embed/WWxHNcl8oDk?si=OCc9BHexKU8AvHqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                embed: '<iframe src="https://www.youtube.com/embed/WWxHNcl8oDk?si=OCc9BHexKU8AvHqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+                link: 'https://www.youtube.com/watch?v=WWxHNcl8oDk'
             },
             {
                 songName: "La Playa",
                 artist: "sk3tch01, X972",
-                embed: '<iframe src="https://www.youtube.com/embed/ac1yOGIPxRs" title="sk3tch01, X972 - La Playa | Funk | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                embed: '<iframe src="https://www.youtube.com/embed/ac1yOGIPxRs" title="sk3tch01, X972 - La Playa | Funk | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+                link: 'https://www.youtube.com/watch?v=ac1yOGIPxRs'
             }
         ];
 
@@ -50,8 +54,14 @@
             const row = document.createElement("tr");
 
             const songNameCell = document.createElement("td");
-            songNameCell.textContent = song.songName;
+            const newLink = document.createElement('a');
+            newLink.href = song.link;
+            newLink.textContent = song.songName;
+            newLink.target = '_blank';
+            newLink.onclick = visitedSong;
+            songNameCell.appendChild(newLink);
             row.appendChild(songNameCell);
+
 
             const artistCell = document.createElement("td");
             artistCell.textContent = song.artist;
@@ -67,6 +77,10 @@
 
             tableBody.appendChild(row);
         });
+
+        function visitedSong() {
+            this.classList.toggle("link-visited");
+        }
     </script>
 </body>
 

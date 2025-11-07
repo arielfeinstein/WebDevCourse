@@ -40,3 +40,7 @@ iframe {
     background-color: blue;
     color: white;
 }
+
+.link-visited {
+    color: yellow;
+}
