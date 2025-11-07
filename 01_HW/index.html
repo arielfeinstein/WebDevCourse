@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <h1>My Favorite Songs</h1>
+    <h1 class="header">My Favorite Songs</h1>
     <table id="music-table">
         <thead>
             <tr>
-                <th>Song Name</th>
-                <th>Artist</th>
-                <th>Video</th>
+                <th class="header">Song Name</th>
+                <th class="header">Artist</th>
+                <th class="header">Video</th>
             </tr>
         </thead>
         <tbody id="table-body">
@@ -42,7 +42,11 @@
 
         const tableBody = document.getElementById("table-body");
 
+        let i = 0;
+
         musicData.forEach(song => {
+
+
             const row = document.createElement("tr");
 
             const songNameCell = document.createElement("td");
@@ -56,6 +60,10 @@
             const linkCell = document.createElement("td");
             linkCell.innerHTML = song.embed;
             row.appendChild(linkCell);
+
+            if (i++ == 0) {
+                row.classList.add("highlight");
+            }
 
             tableBody.appendChild(row);
         });

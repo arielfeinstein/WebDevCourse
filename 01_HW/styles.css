@@ -20,8 +20,11 @@ h1 {
     text-align: center;
 }
 
-#music-table th {
-    background-color: #0077D6;
+.highlight {
+    background-color: #00D0FF;
+    font-size: 50px;
+    color: blue;
+    font-weight: bold;
 }
 
 #music-table tbody tr:hover {
@@ -31,4 +34,9 @@ h1 {
 iframe {
     width: 560px;
     height: 315px;
+}
+
+.header {
+    background-color: blue;
+    color: white;
 }
